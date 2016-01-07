@@ -41,7 +41,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * Internal class for low-level communication with ChromeCast device.
  * Should never be used directly, use {@link su.litvak.chromecast.api.v2.ChromeCast} methods instead
  */
-class Channel implements Closeable {
+public class Channel implements Closeable {
     private static final Logger LOG = LoggerFactory.getLogger(Channel.class);
     /**
      * Period for sending ping requests (in ms)

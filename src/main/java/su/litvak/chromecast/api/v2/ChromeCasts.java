@@ -19,6 +19,7 @@ import javax.jmdns.JmDNS;
 import javax.jmdns.ServiceEvent;
 import javax.jmdns.ServiceListener;
 import java.io.IOException;
+import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +38,8 @@ public class ChromeCasts extends ArrayList<ChromeCast> implements ServiceListene
 
     private void _startDiscovery() throws IOException {
         if (mDNS == null) {
-            mDNS = JmDNS.create();
+//            mDNS = JmDNS.create();
+            mDNS = JmDNS.create(InetAddress.getByName("0.0.0.0"));
             mDNS.addServiceListener(ChromeCast.SERVICE_TYPE, this);
         }
     }

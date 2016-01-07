@@ -33,7 +33,7 @@ public class ChromeCast {
     private final int port;
     private String appsURL;
     private String application;
-    private Channel channel;
+    public Channel channel;
 
     public ChromeCast(JmDNS mDNS, String name) {
         this.name = name;
