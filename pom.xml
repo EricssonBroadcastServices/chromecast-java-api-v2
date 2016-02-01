@@ -23,6 +23,18 @@
         <connection>scm:git:https://github.com/vitalidze/chromecast-java-api-v2.git</connection>
       <tag>HEAD</tag>
   </scm>
+<repositories>
+		<repository>
+			<id>nexus-snapshots</id>
+			<url>http://jenkins01.int.ebstv.net:8081/nexus/content/repositories/snapshots/
+			</url>
+		</repository>
+		<repository>
+			<id>nexus-releases</id>
+			<url>http://jenkins01.int.ebstv.net:8081/nexus/content/repositories/releases/
+			</url>
+		</repository>
+	</repositories>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
