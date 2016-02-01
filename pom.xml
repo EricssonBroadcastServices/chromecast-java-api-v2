@@ -35,7 +35,18 @@
 			</url>
 		</repository>
 	</repositories>
-
+<distributionManagement>
+		<repository>
+			<id>nexus-releases</id>
+			<url>http://172.16.1.15:8081/nexus/content/repositories/releases
+			</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<url>http://172.16.1.15:8081/nexus/content/repositories/snapshots
+			</url>
+		</snapshotRepository>
+	</distributionManagement>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -101,6 +112,14 @@
                             </execution>
                         </executions>
                     </plugin>
+<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<goal>deploy</goal>
+					<releaseProfiles>nexus</releaseProfiles>
+				</configuration>
+			</plugin>
                 </plugins>
             </build>
         </profile>
